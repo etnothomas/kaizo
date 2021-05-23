@@ -1,7 +1,21 @@
 # Run The Project
 The main object under com.kaizo.assignment will start a simple server and 
-bind it to local host and port 8080. It uses persistenc actors and leveldb. State is stored under target/kaizo. 
+bind it to local host and port 8080. It uses some persistent  and non-persistent actors and leveldb. State is stored under target/kaizo. 
 This folder should be created in the root of the project.
+
+Libraries/Frameworks used:
+
+- akka-http
+- akka-streams
+- akka-persistence
+- akka-http-spray-json
+- leveldb
+
+# Actor Hierarchy
+SupervisorActor -> RestClientActor -> JsonParserActor
+
+The SupervisorActor can spin up new RestClientActors , and the RestClientActors 
+can spin up new JsonParserActor's. 
 
 # Endpoints
 The following endpoints are exposed
