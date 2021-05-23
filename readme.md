@@ -97,3 +97,5 @@ The state is stored under target/kaizo. For the project to run with persistence,
 - nextpage field in the StreamState case class is probably redundant
 - Better configuration of the application and individual streams, such as 
   being able to set the max number of tickets returned.
+  
+- Mutating state in the actors, the first FP deadly sin...
