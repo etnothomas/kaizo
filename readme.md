@@ -2,7 +2,9 @@
 The main object under com.kaizo.assignment will start a simple server and 
 bind it to local host and port 8080. It uses persistenc actors and leveldb. State is stored under target/kaizo. 
 This folder should be created in the root of the project.
-It will expose the following endpoints
+
+# Endpoints
+The following endpoints are exposed
 
 ### Create Stream:  /kaizo/v1/addcustomerstream
 This endpoint takes two parameters:
@@ -62,7 +64,7 @@ The state is stored under target/kaizo. For the project to run with persistence,
 
 ## Issues
 - F*%^ing APIRateLimitExceeded errors. The rest client is scheduled to ping the endpoint every 6 seconds for 
-  a given client stream. If I read the documents correctly, this should be fine, so clearly there is 
+  a given client stream, ad tries to get the max number of tickets. If I read the documents correctly, this should be fine, so clearly there is 
   something I am missing here...
   
 - Better handling of wrong tokens. If a stream gets created with the wrong token, it will just keep spitting out error 
@@ -76,3 +78,8 @@ The state is stored under target/kaizo. For the project to run with persistence,
 - Not tested with two or more streams, so hopefully the actor based approach will work :)
 - Better logging and info/warn/error messages
 - Spins up a new actor to process every ResponseEntity, and then stops that actor after processing, this might be overkill...
+- Could return the lag state in a bit more readable format
+- Better checking of return messages from the zendesk endpoint
+- nextpage field in the StreamState case class is probably redundant
+- Better configuration of the application and individual streams, such as 
+  being able to set the max number of tickets returned.
