@@ -31,7 +31,7 @@ http://localhost:8080/kaizo/v1/addcustomerstream?clientName=client1&token=123
 
 ```json
 {
-    "message": "Stream client2 succesfully created"
+    "message": "Stream client1 succesfully created"
 }
 ```
 
