@@ -5,8 +5,8 @@ This folder should be created in the root of the project.
 
 Libraries/Frameworks used:
 
+- akka
 - akka-http
-- akka-streams
 - akka-persistence
 - akka-http-spray-json
 - leveldb
